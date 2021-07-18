@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Yohan Garcia</title>
+    <title>Zedred: A Coding Project by Yohan Garcia</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +15,11 @@
     <!--Font Awesome Icons-->
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
     <link rel="icon" href="./img/YG.svg" type="image/png">
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -39,7 +44,7 @@
                         <a class="nav-link" href="./code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://github.com/yohanJS/miniSitesJS">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/yohanJS/zedred">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://www.yohancraft.com/">About</a>
@@ -51,7 +56,42 @@
 
     <!--Main Section-->
     <main class="flex-shrink-0">
-
+        <div class="container mt-5 mb-5">
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col border-end">
+                    <div>
+                        <h1 class="mt-2 txt-color">Zedred: A Coding Project</h1>
+                        <h4 class="lead">A JavaScript  coding exercise using loops. Write a program that
+                            displays the numbers from 0 to 100. Display the even numbers in <strong>BOLD.</strong>
+                        </h4>
+                        <h2 class="mt-4 border-1 border-bottom txt-color">Instruction</h2>
+                        <p>Enter a starting value and an ending value. Press the Button!</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5 class="mt-2 txt-color">Enter values</h5>
+                    <form class="row gy-2 gx-3">
+                        <div class="col">
+                            <input id="startValue" placeholder="start value" value="0" type="number"  aria-label="start value" class="form-control">
+                        </div>
+                        <div class="col">
+                            <input id="endValue" placeholder="end value" value="100" type="number"  aria-label="end value" class="form-control">
+                        </div>
+                        <div class="col-12">
+                            <button id="btnSubmit" type="button" class="btn border btn-gd text-light">Turn On Zedred!</button>
+                        </div>
+                    </form>
+                    <h2 class="mt-5 border-bottom">Results</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <tbody id="results">
+                                <!--Results will be added using JavaScript-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!--Footer Section-->
