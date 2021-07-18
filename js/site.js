@@ -39,9 +39,6 @@ let makeBold = () => {
 window.onload = function() {
     //when the event of click occurs trigger the makeBold function
     $("btnSubmit").onclick = function() {
-        //this call prevents the page from reprinting the numbers
-        $("results").innerHTML = "";
-        
         makeBold();
    }
 }
