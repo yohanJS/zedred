@@ -11,15 +11,13 @@ let makeBold = () => {
     let numbers = [];
 
     //get the start and end number from the user
-    let startValue = $("startValue").value;
-    let endValue = $("endValue").value;
+    //and convert them to a number
+    let startValue = parseInt($("startValue").value); 
+    let endValue = parseInt($("endValue").value);
 
-    //convert the values to numbers
-    parseInt(startValue);
-    parseInt(endValue);
 
     //populate the array using the starting and ending values
-    for(startValue; startValue <= endValue; startValue++) {
+    for(startValue; startValue <=  endValue; startValue++) {
         numbers.push(startValue);
     }
     
@@ -30,15 +28,17 @@ let makeBold = () => {
         let newR = $("results").insertRow();
         let newC = newR.insertCell();
         newC.innerHTML = num;
-        if(num % 2 == 0) {
+        if(num % 2 == 0) {  
             newR.className = "bold";
         }
     });
+    console.log(numbers)
 }
 
 window.onload = function() {
     //when the event of click occurs trigger the makeBold function
     $("btnSubmit").onclick = function() {
+        $("results").innerHTML = "";
         makeBold();
    }
 }
