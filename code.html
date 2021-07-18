@@ -61,20 +61,92 @@
 
     <!--Main Section-->
     <main class="flex-shrink-0">
-        <div class="container py-4 px-5">
-            <h2 class="border-1 border-bottom txt-color px-5 m-5">The Code for Zedred</h2>
-            <div class="row px-5 row-cols-1 row-cols-md-2">
-                <div class="col col-lg-8">
-                    <pre class="line-numbers"><code class="language-javascript">
-                        let helloWorld = () => {
-                            alert("Hello World");
-                        }                        
-                    </code></pre>
+        <div class="container mt-5">
+            <div class="row">
+                <h2 class="txt-color">The Code for Zedred.</h2>
+                <hr>
+                <div class="col-12 col-md-7">
+                    <div>
+                        <pre><code class="language-javascript">
+"use strict"
+
+//retrieves the id of the HTML element
+let $ =(id)=> {
+    return document.getElementById(id);
+}
+//makes the even numbers BOLD
+let makeBold = () => {
+
+    //this array will hold the numbers generated using a for loop
+    let numbers = [];
+
+    //get the start and end number from the user
+    //and convert them to a number
+    let startValue = parseInt($("startValue").value); 
+    let endValue = parseInt($("endValue").value);
+
+
+    //populate the array using the starting and ending values
+    for(startValue; startValue <=  endValue; startValue++) {
+        numbers.push(startValue);
+    }
+
+    //using the forEach function iterates over the numbers array
+    //and check for even numbers, and make them bold
+    numbers.forEach((num)=>{
+        let row = $("results").insertRow();
+        let cell = row.insertCell();
+        cell.innerHTML = num;
+    
+        if(num % 2 == 0) {  
+            row.className = "bold";
+        }
+    });
+    
+}
+    //when window loads
+    window.onload = function() {
+        //when the event of click occurs trigger the makeBold function
+        $("btnSubmit").onclick = function() {
+        //this statement resets the table body data
+        $("results").innerHTML = "";
+
+        makeBold();
+    }
+}
+                        </code></pre>
+                    </div>
                 </div>
-                <div class="col col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                <div class="col-12 col-md-5 mt-5 mt-sm-0">
+                    <h6 class="txt-color">The Code is Structured in Two Functions</h6>
+                    <p>The first function simply uses a return statement to grab the <strong>ID</strong> of
+                        a specific element, and return its value.
+                    </p>
+                    <br>
+                    <p>Inside the second function, we declare an empty array. This array will
+                        later be used to store the values between the starting value and the ending
+                        value provided by the user.
+                    </p>
+                    <br>
+                    <p>Then using <strong>$ function </strong>we retrieve the starting value
+                    and the ending value. We make sure that we convert the strings numbers to
+                    integers.
+                    We then use a for loop to populate our empty array.
+                    The array will have numbers ranging from the starting value and ending value.
+                    </p>
+                    <br>
+                    <p>In the end we use the <strong>forEach() </strong>method to iterate over
+                        our array. This method takes a callback function. Inside the callback function,
+                        we then create a new row and a new cell. Using an <strong>if statement</strong> and the <strong>%</strong>
+                        module operator, we check if the number is even. If the number is indeed even, we make
+                        that particular row bold.
+                    </p>
+                    <br>
+                    <p>Finally, in the end we use the <strong>window object and the onload method</strong>
+                    to load the script just after the DOM has loaded. Inside the function we add an event listener
+                    that listen if the button <strong>Turn On Zedred </strong> is clicked. When this event happen
+                    we call our <strong>makeBold function</strong>.
+                    </p>
                 </div>
             </div>
         </div>
@@ -113,14 +185,6 @@
     
     <!--linked prism js-->
     <script src="./js/prism.js"></script>
-    <script>
-        Prism.plugins.NormalizeWhitespace.setDefaults({
-        'remove-trailing': true,
-        'remove-indent': true,
-        'left-trim': true,
-        'right-trim': true
-        })
-    </script>
 </body>
 
 </html>

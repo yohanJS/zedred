@@ -1,10 +1,10 @@
 "use strict"
 
-//returns the id of the HTML element
+//retrieves the id of the HTML element
 let $ =(id)=> {
     return document.getElementById(id);
 }
-
+//makes the even numbers BOLD
 let makeBold = () => {
 
     //this array will hold the numbers generated using a for loop
@@ -25,20 +25,22 @@ let makeBold = () => {
     //and check for even numbers, and make them bold
     numbers.forEach((num)=>{
         
-        let newR = $("results").insertRow();
-        let newC = newR.insertCell();
-        newC.innerHTML = num;
+        let row = $("results").insertRow();
+        let cell = row.insertCell();
+        cell.innerHTML = num;
         if(num % 2 == 0) {  
-            newR.className = "bold";
+            row.className = "bold";
         }
     });
-    console.log(numbers)
-}
 
+}
+//when window loads
 window.onload = function() {
     //when the event of click occurs trigger the makeBold function
     $("btnSubmit").onclick = function() {
+        //this statement resets the table body data
         $("results").innerHTML = "";
+    
         makeBold();
    }
 }
