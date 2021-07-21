@@ -1,2 +1,3 @@
-# miniSitesJS
-This repo will store all the mini JavaScript's site projects I am going to create
+# Zedred App
+This application will display the numbers multiple of 2 in BOLD
+
